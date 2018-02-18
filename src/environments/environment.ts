@@ -10,7 +10,7 @@ export const environment = {
     authDomain: "mdb-angular.firebaseapp.com",
     databaseURL: "https://mdb-angular.firebaseio.com",
     projectId: "mdb-angular",
-    storageBucket: "",
+    storageBucket: "mdb-angular.appspot.com",
     messagingSenderId: "612439104360"
 
   }
