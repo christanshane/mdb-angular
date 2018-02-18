@@ -25,7 +25,7 @@
                                 <input type="text" placeholder="Product Tag" [(ngModel)]="product.tag" name="tag">
                             </div>
                             <div class="input-field col-lg-4 s4">
-                                <input id="image" type="file" placeholder="Product Image" [(ngModel)]="product.img" name="img">
+                                <input id="image" type="text" placeholder="Product Image" [(ngModel)]="product.img" name="img">
                             </div>
                         </div>
                         <input type="submit" value="Submit" class="btn btn-primary">
@@ -39,15 +39,20 @@
     <div class="row">
         <div *ngFor="let product of products" class="col-lg-4">
             <div class="card mb-r wow fadeIn" data-wow-delay='0.2s'>
-                <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/14.jpg" alt="Card image cap">
+                <img class="img-fluid" src="{{product.img}}" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="font-bold">
                         <strong>{{product.name}}</strong>
-                        <span class="badge badge-danger">{{product.tag}}</span>
+                        <div *ngIf="product.tag=='Sale'">
+                            <span class="badge badge-success">{{product.tag}}</span>
+                        </div>
+                        <div *ngIf="product.tag=='Featured'">
+                            <span class="badge badge-danger">{{product.tag}}</span>
+                        </div>
                     </h5>
                     <hr>
                     <h4>
-                        <strong>{{product.price}}$</strong>
+                        <strong>₱{{product.price}}</strong>
                     </h4>
                     <p class="card-text mt-4">{{product.desc}}
                     </p>
