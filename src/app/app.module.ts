@@ -20,6 +20,7 @@ import { environment } from '../environments/environment';
 
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { ProductComponent } from './product/product.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     HomeComponent,
     FooterComponent,
     ProductlistingComponent,
-    ProductsComponent
+    ProductsComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,

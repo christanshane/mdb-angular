@@ -34,12 +34,11 @@
             </div>
         </div>
     </div>
-    
     <br>
     <div class="row">
         <div *ngFor="let product of products" class="col-lg-4">
             <div class="card mb-r wow fadeIn" data-wow-delay='0.2s'>
-                <img class="img-fluid" src="{{product.img}}" alt="Card image cap">
+                <img class="img-fluid mt-4" src="{{product.img}}" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="font-bold">
                         <strong>{{product.name}}</strong>
@@ -56,7 +55,7 @@
                     </h4>
                     <p class="card-text mt-4">{{product.desc}}
                     </p>
-                    <a href="#" class="btn btn-success btn-sm"><i class="fa fa-shopping-cart"></i>    Add to cart</a>
+                    <a [routerLink]="['/product', product.id]" class="btn btn-info btn-sm">Details</a>
                 </div>
             </div>
         </div>

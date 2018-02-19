@@ -3,6 +3,8 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 import { Product } from '../product-model';
 import { Observable } from 'rxjs/Observable';
 
+
+
 @Injectable()
 export class ProductService {
   productsCollection: AngularFirestoreCollection<Product>;
@@ -22,6 +24,11 @@ export class ProductService {
 
    getProducts(){
      return this.products;
+   }
+
+   getProductDetails(id){
+     this.productDoc = this.angularFirestore.collection('products').doc(id);
+     this.productDoc.ref.get();
    }
 
    addProduct(product:Product){
