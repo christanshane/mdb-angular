@@ -26,11 +26,6 @@ export class ProductService {
      return this.products;
    }
 
-   getProductDetails(id){
-     this.productDoc = this.angularFirestore.collection('products').doc(id);
-     this.productDoc.ref.get();
-   }
-
    addProduct(product:Product){
      this.productsCollection.add(product);
    }

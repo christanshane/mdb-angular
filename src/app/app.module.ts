@@ -17,8 +17,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 import { environment } from '../environments/environment';
-
-
+  
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { ProductComponent } from './product/product.component';
 
@@ -30,7 +29,7 @@ import { ProductComponent } from './product/product.component';
     FooterComponent,
     ProductlistingComponent,
     ProductsComponent,
-    ProductComponent
+    ProductComponent,
   ],
   imports: [
     BrowserModule,
