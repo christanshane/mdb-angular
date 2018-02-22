@@ -11,6 +11,8 @@ export class ProductService {
   products:Observable<Product[]>;
   productDoc:AngularFirestoreDocument<Product>;
 
+  result:any;
+
   constructor(public angularFirestore:AngularFirestore) { 
     this.productsCollection = this.angularFirestore.collection('products');
     this.products = this.productsCollection.snapshotChanges().map(changes =>{
@@ -28,5 +30,9 @@ export class ProductService {
 
    addProduct(product:Product){
      this.productsCollection.add(product);
+   }
+
+   getProductDetails(id){
+     return this.angularFirestore.doc<Product>('products/'+ id);
    }
 }

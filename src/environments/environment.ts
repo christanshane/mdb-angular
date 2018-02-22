@@ -12,6 +12,5 @@ export const environment = {
     projectId: "mdb-angular",
     storageBucket: "mdb-angular.appspot.com",
     messagingSenderId: "612439104360"
-
   }
 };
