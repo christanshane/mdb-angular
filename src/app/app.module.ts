@@ -15,11 +15,17 @@ import { ProductsComponent } from './products/products.component';
 import { ProductService } from './services/product.service';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth'
 
 import { environment } from '../environments/environment';
+
+
+import { AuthService } from './services/auth.service';
   
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { ProductComponent } from './product/product.component';
+import { UserLoginComponent } from './user-login/user-login.component';
+import { UserSignupComponent } from './user-signup/user-signup.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +36,8 @@ import { ProductComponent } from './product/product.component';
     ProductlistingComponent,
     ProductsComponent,
     ProductComponent,
+    UserLoginComponent,
+    UserSignupComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,14 +47,17 @@ import { ProductComponent } from './product/product.component';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    AngularFireAuthModule,
     MDBBootstrapModule.forRoot(),
     AgmCoreModule.forRoot({
       // https://developers.google.com/maps/documentation/javascript/get-api-key?hl=en#key
       apiKey: 'Your_api_key'
     })
   ],
-  providers: [ProductService],
+  providers: [ProductService,
+  AuthService,
+  ],
   bootstrap: [AppComponent],
-  schemas:      [ NO_ERRORS_SCHEMA ]
+  schemas: [ NO_ERRORS_SCHEMA ]
 })
 export class AppModule { }

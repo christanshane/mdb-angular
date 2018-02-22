@@ -23,9 +23,15 @@ export class ProductService {
       });
     });
    }
-
+   
    getProducts(){
-     return this.products;
+     return this.angularFirestore.collection('products').snapshotChanges().map(changes =>{
+       return changes.map(a =>{
+         const data = a.payload.doc.data() as Product;
+         data.id = a.payload.doc.id;
+         return data;
+       })
+     })
    }
 
    addProduct(product:Product){

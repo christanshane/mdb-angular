@@ -25,9 +25,11 @@ aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler
 <!-- Links -->
 
 <!-- Search form -->
-<form class="form-inline">
-<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-</form>
+<ul class="nav navbar-nav navbar-right">
+<li class="nav-item nav-link" *ngIf="authService.user | async">{{(authService.user|async)?.email}}</li>
+<li *ngIf="!(authService.user | async)" class="nav-item"><a class="nav-link" routerLink="login">Login</a></li>
+<li *ngIf="authService.user | async" class="nav-item"><a class="nav-link" (click)="logout()">Logout</a></li>
+</ul>
 </div>
 <!-- Collapsible content -->
 

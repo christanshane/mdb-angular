@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-4">
+      <hgroup>
+        <h1>Login</h1>
+      
+      </hgroup>
+      <form>
+        <div class="group">
+          <input type="text" [(ngModel)]="email" name="email" ><span class="highlight"></span><span class="bar"></span>
+          <label>Email</label>
+        </div>
+        <div class="group">
+          <input type="password" [(ngModel)]="password" name="password"><span class="highlight"></span><span class="bar"></span>
+          <label>Password</label>
+        </div>
+        <button type="button" (click)="login()" [disabled]="!email || !password" class="button buttonBlue">Login
+          <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+        </button> 
+          <small>Don't have an account? <a routerLink="/signup">Signup here.</a> </small>
+      </form>
+    </div>
+  </div>
+</div>
