@@ -15,7 +15,7 @@ import { ProductsComponent } from './products/products.component';
 import { ProductService } from './services/product.service';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth'
+import { AngularFireAuthModule } from 'angularfire2/auth'
 
 import { environment } from '../environments/environment';
 

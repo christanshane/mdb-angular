@@ -29,6 +29,7 @@ webpackEmptyAsyncContext.id = "../../../../../src/$$_lazy_route_resource lazy re
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home_component__ = __webpack_require__("../../../../../src/app/home/home.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__product_product_component__ = __webpack_require__("../../../../../src/app/product/product.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__user_login_user_login_component__ = __webpack_require__("../../../../../src/app/user-login/user-login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__user_signup_user_signup_component__ = __webpack_require__("../../../../../src/app/user-signup/user-signup.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -42,11 +43,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var routes = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_4__home_home_component__["a" /* HomeComponent */] },
     { path: 'products', component: __WEBPACK_IMPORTED_MODULE_3__products_products_component__["a" /* ProductsComponent */] },
     { path: 'product/:id', component: __WEBPACK_IMPORTED_MODULE_5__product_product_component__["a" /* ProductComponent */] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_6__user_login_user_login_component__["a" /* UserLoginComponent */] },
+    { path: 'signup', component: __WEBPACK_IMPORTED_MODULE_7__user_signup_user_signup_component__["a" /* UserSignupComponent */] },
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -54,11 +57,11 @@ var AppRoutingModule = /** @class */ (function () {
     AppRoutingModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* RouterModule */].forRoot(routes),
+                __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* RouterModule */].forRoot(routes),
                 __WEBPACK_IMPORTED_MODULE_2__angular_common__["b" /* CommonModule */]
             ],
             declarations: [],
-            exports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* RouterModule */]]
+            exports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* RouterModule */]]
         })
     ], AppRoutingModule);
     return AppRoutingModule;
@@ -144,17 +147,21 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_product_service__ = __webpack_require__("../../../../../src/app/services/product.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_angularfire2__ = __webpack_require__("../../../../angularfire2/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_angularfire2_firestore__ = __webpack_require__("../../../../angularfire2/firestore/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__app_routing_app_routing_module__ = __webpack_require__("../../../../../src/app/app-routing/app-routing.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__product_product_component__ = __webpack_require__("../../../../../src/app/product/product.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__user_login_user_login_component__ = __webpack_require__("../../../../../src/app/user-login/user-login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__user_signup_user_signup_component__ = __webpack_require__("../../../../../src/app/user-signup/user-signup.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_angularfire2_auth__ = __webpack_require__("../../../../angularfire2/auth/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__app_routing_app_routing_module__ = __webpack_require__("../../../../../src/app/app-routing/app-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__product_product_component__ = __webpack_require__("../../../../../src/app/product/product.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__user_login_user_login_component__ = __webpack_require__("../../../../../src/app/user-login/user-login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__user_signup_user_signup_component__ = __webpack_require__("../../../../../src/app/user-signup/user-signup.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -188,25 +195,28 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_10__footer_footer_component__["a" /* FooterComponent */],
                 __WEBPACK_IMPORTED_MODULE_11__productlisting_productlisting_component__["a" /* ProductlistingComponent */],
                 __WEBPACK_IMPORTED_MODULE_12__products_products_component__["a" /* ProductsComponent */],
-                __WEBPACK_IMPORTED_MODULE_18__product_product_component__["a" /* ProductComponent */],
-                __WEBPACK_IMPORTED_MODULE_19__user_login_user_login_component__["a" /* UserLoginComponent */],
-                __WEBPACK_IMPORTED_MODULE_20__user_signup_user_signup_component__["a" /* UserSignupComponent */],
+                __WEBPACK_IMPORTED_MODULE_20__product_product_component__["a" /* ProductComponent */],
+                __WEBPACK_IMPORTED_MODULE_21__user_login_user_login_component__["a" /* UserLoginComponent */],
+                __WEBPACK_IMPORTED_MODULE_22__user_signup_user_signup_component__["a" /* UserSignupComponent */],
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_4__angular_http__["a" /* HttpModule */],
-                __WEBPACK_IMPORTED_MODULE_17__app_routing_app_routing_module__["a" /* AppRoutingModule */],
-                __WEBPACK_IMPORTED_MODULE_14_angularfire2__["a" /* AngularFireModule */].initializeApp(__WEBPACK_IMPORTED_MODULE_16__environments_environment__["a" /* environment */].firebase),
+                __WEBPACK_IMPORTED_MODULE_19__app_routing_app_routing_module__["a" /* AppRoutingModule */],
+                __WEBPACK_IMPORTED_MODULE_14_angularfire2__["a" /* AngularFireModule */].initializeApp(__WEBPACK_IMPORTED_MODULE_17__environments_environment__["a" /* environment */].firebase),
                 __WEBPACK_IMPORTED_MODULE_15_angularfire2_firestore__["b" /* AngularFirestoreModule */],
+                __WEBPACK_IMPORTED_MODULE_16_angularfire2_auth__["b" /* AngularFireAuthModule */],
                 __WEBPACK_IMPORTED_MODULE_5__typescripts_free__["a" /* MDBBootstrapModule */].forRoot(),
                 __WEBPACK_IMPORTED_MODULE_6__agm_core__["a" /* AgmCoreModule */].forRoot({
                     // https://developers.google.com/maps/documentation/javascript/get-api-key?hl=en#key
                     apiKey: 'Your_api_key'
                 })
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_13__services_product_service__["a" /* ProductService */]],
+            providers: [__WEBPACK_IMPORTED_MODULE_13__services_product_service__["a" /* ProductService */],
+                __WEBPACK_IMPORTED_MODULE_18__services_auth_service__["a" /* AuthService */],
+            ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]],
             schemas: [__WEBPACK_IMPORTED_MODULE_2__angular_core__["I" /* NO_ERRORS_SCHEMA */]]
         })
@@ -343,7 +353,7 @@ var HomeComponent = /** @class */ (function () {
 /***/ "../../../../../src/app/navbar/navbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<!--Navbar-->\n<nav class=\"navbar navbar-expand-lg navbar-dark stylish-color-dark\">\n<div class=\"container\">\n\n<!-- Navbar brand -->\n<a class=\"navbar-brand\" routerLink=\"\">Get Gadgets</a>\n\n<!-- Collapse button -->\n<button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\"\naria-expanded=\"false\" aria-label=\"Toggle navigation\"><span class=\"navbar-toggler-icon\"></span></button>\n\n<!-- Collapsible content -->\n<div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n\n<!-- Links -->\n<ul class=\"navbar-nav mr-auto\">\n<li class=\"nav-item active\">\n<a class=\"nav-link\" routerLink=\"\">Home <span class=\"sr-only\">(current)</span></a>\n</li>\n<li class=\"nav-item\">\n<a class=\"nav-link\" routerLink=\"products\">Products</a>\n</li>\n</ul>\n<!-- Links -->\n\n<!-- Search form -->\n<ul class=\"nav navbar-nav navbar-right\">\n<li class=\"nav-item\"><a class=\"nav-link\" (click)=\"login()\">Login</a></li>\n<li class=\"nav-item\"><a class=\"nav-link\" (click)=\"logout()\">Logout</a></li>\n</ul>\n</div>\n<!-- Collapsible content -->\n\n</div>\n</nav>\n<!--/.Navbar-->\n"
+module.exports = "\n<!--Navbar-->\n<nav class=\"navbar navbar-expand-lg navbar-dark stylish-color-dark\">\n<div class=\"container\">\n\n<!-- Navbar brand -->\n<a class=\"navbar-brand\" routerLink=\"\">Get Gadgets</a>\n\n<!-- Collapse button -->\n<button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\"\naria-expanded=\"false\" aria-label=\"Toggle navigation\"><span class=\"navbar-toggler-icon\"></span></button>\n\n<!-- Collapsible content -->\n<div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n\n<!-- Links -->\n<ul class=\"navbar-nav mr-auto\">\n<li class=\"nav-item active\">\n<a class=\"nav-link\" routerLink=\"\">Home <span class=\"sr-only\">(current)</span></a>\n</li>\n<li class=\"nav-item\">\n<a class=\"nav-link\" routerLink=\"products\">Products</a>\n</li>\n</ul>\n<!-- Links -->\n\n<!-- Search form -->\n<ul class=\"nav navbar-nav navbar-right\">\n<li class=\"nav-item nav-link\" *ngIf=\"authService.user | async\">{{(authService.user|async)?.email}}</li>\n<li *ngIf=\"!(authService.user | async)\" class=\"nav-item\"><a class=\"nav-link\" routerLink=\"login\">Login</a></li>\n<li *ngIf=\"authService.user | async\" class=\"nav-item\"><a class=\"nav-link\" (click)=\"logout()\">Logout</a></li>\n</ul>\n</div>\n<!-- Collapsible content -->\n\n</div>\n</nav>\n<!--/.Navbar-->\n"
 
 /***/ }),
 
@@ -371,6 +381,7 @@ module.exports = module.exports.toString();
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NavbarComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -381,12 +392,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var NavbarComponent = /** @class */ (function () {
-    function NavbarComponent() {
+    function NavbarComponent(authService) {
+        this.authService = authService;
     }
     NavbarComponent.prototype.ngOnInit = function () {
     };
-    NavbarComponent.prototype.login = function () {
+    NavbarComponent.prototype.logout = function () {
+        this.authService.logout();
     };
     NavbarComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -394,7 +408,7 @@ var NavbarComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/navbar/navbar.component.html"),
             styles: [__webpack_require__("../../../../../src/app/navbar/navbar.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]])
     ], NavbarComponent);
     return NavbarComponent;
 }());
@@ -406,7 +420,7 @@ var NavbarComponent = /** @class */ (function () {
 /***/ "../../../../../src/app/product/product.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <div class=\"row mt-4\">\n    <div class=\"col\">\n        <nav aria-label=\"breadcrumb\">\n            <ol class=\"breadcrumb\">\n                <li class=\"breadcrumb-item\"><a routerLink=\"\">Home</a></li>\n                <li class=\"breadcrumb-item\"><a routerLink=\"categories\">Category</a></li>\n                <li class=\"breadcrumb-item active\" aria-current=\"page\">Product</li>\n            </ol>\n        </nav>\n    </div>\n  </div>\n  <div class=\"row mt-4\">\n      <div class=\"col-12 col-lg-6\">\n          <div class=\"card bg-light mb-3\">\n              <div class=\"card-body\">\n                      <img class=\"img-fluid\" src=\"{{product?.img}}\" />\n              </div>\n          </div>\n      </div>\n\n      <!-- Add to cart -->\n      <div class=\"col-12 col-lg-6 add_to_cart_block\">\n          <div class=\"card bg-light mb-3\">\n              <div class=\"card-body\">\n                  <p class=\"price\">₱{{product?.price}}</p>\n                  <form method=\"get\" action=\"cart.html\">\n                    <label>Quantity :</label>\n                    <input type=\"text\" class=\"form-control\"  id=\"quantity\" name=\"quantity\" min=\"1\" max=\"100\" value=\"1\">\n                    <a href=\"cart.html\" class=\"btn btn-success btn-lg btn-block text-uppercase\">\n                      <i class=\"fa fa-shopping-cart\"></i> Add To Cart\n                    </a>\n                  </form>\n                  <div class=\"product_rassurance mb-3\">\n                      <ul class=\"list-inline\">\n                          <li class=\"list-inline-item\"><i class=\"fa fa-tags fa-2x\"></i><br/>{{product?.category}}</li>\n                          <li class=\"list-inline-item\"><i class=\"fa fa-credit-card fa-2x\"></i><br/>Secure payment</li>\n                          <li class=\"list-inline-item\"><i class=\"fa fa-phone fa-2x\"></i><br/>+639274298113</li>\n                      </ul>\n                  </div>\n                  <div class=\"card mb-1\">\n                      <div class=\"card-header stylish-color-dark text-light text-uppercase\"><i class=\"fa fa-align-justify\"></i>{{product?.name}}</div>\n                      <div class=\"card-body\">\n                          <p class=\"card-text\">\n                              {{product?.desc}}\n                          </p>\n                      </div>\n                  </div>\n              </div>\n          </div>\n      </div>\n  </div>\n</div>"
+module.exports = "<div class=\"container\">\n  <div class=\"row mt-4\">\n    <div class=\"col\">\n        <nav aria-label=\"breadcrumb\">\n            <ol class=\"breadcrumb\">\n                <li class=\"breadcrumb-item\"><a routerLink=\"\">Home</a></li>\n                <li class=\"breadcrumb-item\"><a routerLink=\"categories\">Category</a></li>\n                <li class=\"breadcrumb-item\"><a routerLink=\"/products\">Products</a></li>\n                <li class=\"breadcrumb-item active\" aria-current=\"page\">Product</li>\n            </ol>\n        </nav>\n    </div>\n  </div>\n  <div class=\"row mt-4 justify-content-center\">\n      <div class=\"col-12 col-lg-6\">\n          <div class=\"card bg-light mb-3\">\n              <div class=\"card-body\">\n                      <img class=\"img-fluid\" src=\"{{product?.img}}\" />\n              </div>\n          </div>\n      </div>\n\n      <!-- Add to cart -->\n      <div class=\"col-12 col-lg-6 add_to_cart_block\">\n          <div class=\"card bg-light mb-3\">\n              <div class=\"card-body\">\n                  <p class=\"price\">₱{{product?.price}}</p>\n                  <form method=\"get\" action=\"cart.html\">\n                    <label>Quantity :</label>\n                    <input type=\"text\" class=\"form-control\"  id=\"quantity\" name=\"quantity\" min=\"1\" max=\"100\" value=\"1\">\n                    <a href=\"cart.html\" class=\"btn btn-success btn-lg btn-block text-uppercase\">\n                      <i class=\"fa fa-shopping-cart\"></i> Add To Cart\n                    </a>\n                  </form>\n                  <div class=\"product_rassurance mb-3\">\n                      <ul class=\"list-inline\">\n                          <li class=\"list-inline-item\"><i class=\"fa fa-tags fa-2x\"></i><br/>{{product?.category}}</li>\n                          <li class=\"list-inline-item\"><i class=\"fa fa-credit-card fa-2x\"></i><br/>Secure payment</li>\n                          <li class=\"list-inline-item\"><i class=\"fa fa-phone fa-2x\"></i><br/>+639274298113</li>\n                      </ul>\n                  </div>\n                  <div class=\"card mb-1\">\n                      <div class=\"card-header stylish-color-dark text-light text-uppercase\"><i class=\"fa fa-align-justify\"></i>{{product?.name}}</div>\n                      <div class=\"card-body\">\n                          <p class=\"card-text\">\n                              {{product?.desc}}\n                          </p>\n                      </div>\n                  </div>\n              </div>\n          </div>\n      </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -540,7 +554,7 @@ var ProductlistingComponent = /** @class */ (function () {
 /***/ "../../../../../src/app/products/products.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<br>\r\n<div class=\"container\">\r\n    <div class=\"row\">\r\n        <div class=\"col-lg-12\">\r\n            <div class=\"card\">\r\n                <div class=\"card-body\">\r\n                    <h4 class=\"card-title\">Add Product</h4>\r\n                    <form (ngSubmit)=\"onSubmit()\" class=\"col s6\">\r\n                        <div class=\"row mb-4\">\r\n                            <div class=\"input-field col-lg-4 s4\">\r\n                                <input type=\"text\" placeholder=\"Product Name\" [(ngModel)]=\"product.name\" name=\"name\">\r\n                            </div>\r\n                            <div class=\"input-field col-lg-6 s4\">\r\n                                <input type=\"text\" placeholder=\"Product Description\" [(ngModel)]=\"product.desc\" name=\"desc\">\r\n                            </div>\r\n                            <div class=\"input-field col-lg-2 s4\">\r\n                                <input type=\"text\" placeholder=\"Product Price\" [(ngModel)]=\"product.price\" name=\"price\">\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"row mb-4\">\r\n                            <div class=\"input-field col-lg-4 s4\">\r\n                                <input type=\"text\" placeholder=\"Product Category\" [(ngModel)]=\"product.category\" name=\"category\">\r\n                            </div>\r\n                            <div class=\"input-field col-lg-4 s4\">\r\n                                <input type=\"text\" placeholder=\"Product Tag\" [(ngModel)]=\"product.tag\" name=\"tag\">\r\n                            </div>\r\n                            <div class=\"input-field col-lg-4 s4\">\r\n                                <input id=\"image\" type=\"text\" placeholder=\"Product Image\" [(ngModel)]=\"product.img\" name=\"img\">\r\n                            </div>\r\n                        </div>\r\n                        <input type=\"submit\" value=\"Submit\" class=\"btn btn-primary\">\r\n                    </form>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <br>\r\n    <div class=\"row\">\r\n        <div *ngFor=\"let product of products\" class=\"col-lg-4\">\r\n            <div class=\"card mb-r wow fadeIn\">\r\n                <img class=\"img-fluid mt-4\" src=\"{{product.img}}\" alt=\"Card image cap\">\r\n                <div class=\"card-body\">\r\n                    <h5 class=\"font-bold\">\r\n                        <strong>{{product.name}}</strong>\r\n                        <div *ngIf=\"product.tag=='Sale'\">\r\n                            <span class=\"badge badge-success\">{{product.tag}}</span>\r\n                        </div>\r\n                        <div *ngIf=\"product.tag=='Featured'\">\r\n                            <span class=\"badge badge-danger\">{{product.tag}}</span>\r\n                        </div>\r\n                    </h5>\r\n                    <hr>\r\n                    <h4>\r\n                        <strong>₱{{product.price}}</strong>\r\n                    </h4>\r\n                    <a [routerLink]=\"['/product', product.id]\" class=\"btn btn-info btn-md\">Details</a>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
+module.exports = "<br>\r\n<div class=\"container\">\r\n    <!--<div class=\"row\">\r\n        <div class=\"col-lg-12\">\r\n            <div class=\"card\">\r\n                <div class=\"card-body\">\r\n                    <h4 class=\"card-title\">Add Product</h4>\r\n                    <form (ngSubmit)=\"onSubmit()\" class=\"col s6\">\r\n                        <div class=\"row mb-4\">\r\n                            <div class=\"input-field col-lg-4 s4\">\r\n                                <input type=\"text\" placeholder=\"Product Name\" [(ngModel)]=\"product.name\" name=\"name\">\r\n                            </div>\r\n                            <div class=\"input-field col-lg-6 s4\">\r\n                                <input type=\"text\" placeholder=\"Product Description\" [(ngModel)]=\"product.desc\" name=\"desc\">\r\n                            </div>\r\n                            <div class=\"input-field col-lg-2 s4\">\r\n                                <input type=\"text\" placeholder=\"Product Price\" [(ngModel)]=\"product.price\" name=\"price\">\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"row mb-4\">\r\n                            <div class=\"input-field col-lg-4 s4\">\r\n                                <input type=\"text\" placeholder=\"Product Category\" [(ngModel)]=\"product.category\" name=\"category\">\r\n                            </div>\r\n                            <div class=\"input-field col-lg-4 s4\">\r\n                                <input type=\"text\" placeholder=\"Product Tag\" [(ngModel)]=\"product.tag\" name=\"tag\">\r\n                            </div>\r\n                            <div class=\"input-field col-lg-4 s4\">\r\n                                <input id=\"image\" type=\"text\" placeholder=\"Product Image\" [(ngModel)]=\"product.img\" name=\"img\">\r\n                            </div>\r\n                        </div>\r\n                        <input type=\"submit\" value=\"Submit\" class=\"btn btn-primary\">\r\n                    </form>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>-->\r\n    <br>\r\n    <div class=\"container-fluid content-row\">\r\n        <div class=\"row\">\r\n            <div *ngFor=\"let product of products\" class=\"col-lg-4\">\r\n                <div class=\"card mb-r wow fadeIn\">\r\n                    <img class=\"img-fluid card-img-top mt-4\" style=\"object-fit:cover;\" src=\"{{product.img}}\" alt=\"Card image cap\">\r\n                    <div class=\"card-body\">\r\n                            {{product.name.slice(0,20)}}...\r\n                        <hr>\r\n                        <h4>\r\n                            <strong>₱{{product.price}}</strong>\r\n                        </h4>\r\n                            <!--<div *ngIf=\"product.tag=='Sale'\">\r\n                                <span class=\"badge badge-success\">{{product.tag}}</span>\r\n                            </div>\r\n                            <div *ngIf=\"product.tag=='Featured'\">\r\n                                <span class=\"badge badge-danger\">{{product.tag}}</span>\r\n                            </div>-->\r\n                        <a [routerLink]=\"['/product', product.id]\" class=\"btn btn-info btn-md\">Details</a>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -617,6 +631,69 @@ var ProductsComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */]])
     ], ProductsComponent);
     return ProductsComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/auth.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_auth__ = __webpack_require__("../../../../angularfire2/auth/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var AuthService = /** @class */ (function () {
+    function AuthService(firebaseAuth, router) {
+        this.firebaseAuth = firebaseAuth;
+        this.router = router;
+        this.user = firebaseAuth.authState;
+    }
+    AuthService.prototype.signup = function (email, password) {
+        var _this = this;
+        this.firebaseAuth.auth.createUserWithEmailAndPassword(email, password).then(function (value) {
+            console.log("Success!", value);
+            _this.router.navigate(['login']);
+        }).catch(function (err) {
+            console.log("Something went wrong", err.message);
+        });
+    };
+    AuthService.prototype.login = function (email, password) {
+        var _this = this;
+        this.firebaseAuth.auth.signInWithEmailAndPassword(email, password).then(function (value) {
+            console.log("Nice it worked!", value);
+            _this.router.navigate(['/']);
+        })
+            .catch(function (err) {
+            console.log("Something went wrong", err.message);
+        });
+    };
+    AuthService.prototype.logout = function () {
+        var _this = this;
+        this.firebaseAuth.auth.signOut().then(function (value) {
+            console.log('You have logged out', value);
+            _this.router.navigate(['/']);
+        });
+    };
+    AuthService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_auth__["a" /* AngularFireAuth */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]])
+    ], AuthService);
+    return AuthService;
 }());
 
 
@@ -4577,7 +4654,7 @@ var LinksComponent = /** @class */ (function () {
     LinksComponent.prototype.ngAfterViewInit = function () {
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["r" /* ContentChildren */])(__WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* RouterLinkWithHref */], { read: __WEBPACK_IMPORTED_MODULE_1__angular_core__["t" /* ElementRef */], descendants: true }),
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["r" /* ContentChildren */])(__WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* RouterLinkWithHref */], { read: __WEBPACK_IMPORTED_MODULE_1__angular_core__["t" /* ElementRef */], descendants: true }),
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1__angular_core__["V" /* QueryList */])
     ], LinksComponent.prototype, "links", void 0);
     __decorate([
@@ -4964,7 +5041,7 @@ var NavlinksComponent = /** @class */ (function () {
     NavlinksComponent.prototype.ngAfterViewInit = function () {
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["r" /* ContentChildren */])(__WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* RouterLinkWithHref */], { read: __WEBPACK_IMPORTED_MODULE_1__angular_core__["t" /* ElementRef */], descendants: true }),
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["r" /* ContentChildren */])(__WEBPACK_IMPORTED_MODULE_2__angular_router__["c" /* RouterLinkWithHref */], { read: __WEBPACK_IMPORTED_MODULE_1__angular_core__["t" /* ElementRef */], descendants: true }),
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1__angular_core__["V" /* QueryList */])
     ], NavlinksComponent.prototype, "links", void 0);
     __decorate([
@@ -6794,7 +6871,7 @@ var Utils = /** @class */ (function () {
 /***/ "../../../../../src/app/user-login/user-login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <div class=\"row justify-content-center\">\n    <div class=\"col-lg-4\">\n      <hgroup>\n        <h1>Login</h1>\n      \n      </hgroup>\n      <form>\n        <div class=\"group\">\n          <input type=\"text\"><span class=\"highlight\"></span><span class=\"bar\"></span>\n          <label>Name</label>\n        </div>\n        <div class=\"group\">\n          <input type=\"email\"><span class=\"highlight\"></span><span class=\"bar\"></span>\n          <label>Email</label>\n        </div>\n        <button type=\"button\" class=\"button buttonBlue\">Login\n          <div class=\"ripples buttonRipples\"><span class=\"ripplesCircle\"></span></div>\n        </button> \n          <small>Don't have an account? <a href=\"\">Signup here.</a> </small>\n      </form>\n    </div>\n  </div>\n</div>"
+module.exports = "<div class=\"container\">\n  <div class=\"row justify-content-center\">\n    <div class=\"col-lg-4\">\n      <hgroup>\n        <h1>Login</h1>\n      \n      </hgroup>\n      <form>\n        <div class=\"group\">\n          <input type=\"text\" [(ngModel)]=\"email\" name=\"email\" ><span class=\"highlight\"></span><span class=\"bar\"></span>\n          <label>Email</label>\n        </div>\n        <div class=\"group\">\n          <input type=\"password\" [(ngModel)]=\"password\" name=\"password\"><span class=\"highlight\"></span><span class=\"bar\"></span>\n          <label>Password</label>\n        </div>\n        <button type=\"button\" (click)=\"login()\" [disabled]=\"!email || !password\" class=\"button buttonBlue\">Login\n          <div class=\"ripples buttonRipples\"><span class=\"ripplesCircle\"></span></div>\n        </button> \n          <small>Don't have an account? <a routerLink=\"/signup\">Signup here.</a> </small>\n      </form>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -6822,6 +6899,7 @@ module.exports = module.exports.toString();
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserLoginComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6832,10 +6910,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var UserLoginComponent = /** @class */ (function () {
-    function UserLoginComponent() {
+    function UserLoginComponent(authService) {
+        this.authService = authService;
     }
     UserLoginComponent.prototype.ngOnInit = function () {
+    };
+    UserLoginComponent.prototype.login = function () {
+        this.authService.login(this.email, this.password);
+        this.email = this.password = '';
+    };
+    UserLoginComponent.prototype.logout = function () {
+        this.authService.logout();
     };
     UserLoginComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -6843,7 +6930,7 @@ var UserLoginComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/user-login/user-login.component.html"),
             styles: [__webpack_require__("../../../../../src/app/user-login/user-login.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]])
     ], UserLoginComponent);
     return UserLoginComponent;
 }());
@@ -6855,7 +6942,7 @@ var UserLoginComponent = /** @class */ (function () {
 /***/ "../../../../../src/app/user-signup/user-signup.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  user-signup works!\n</p>\n"
+module.exports = "<div class=\"container\">\n  <div class=\"row justify-content-center\">\n    <div class=\"col-lg-4\">\n      <hgroup>\n        <h1>Signup</h1>\n      \n      </hgroup>\n      <form>\n        <div class=\"group\">\n          <input type=\"email\" [(ngModel)]=\"email\" name=\"email\" ><span class=\"highlight\"></span><span class=\"bar\"></span>\n          <label>Email</label>\n        </div>\n        <div class=\"group\">\n          <input type=\"password\" [(ngModel)]=\"password\" name=\"password\"><span class=\"highlight\"></span><span class=\"bar\"></span>\n          <label>Password</label>\n        </div>\n        <button type=\"button\" (click)=\"signup()\" [disabled]=\"!email || !password\" class=\"button buttonBlue\">Signup\n          <div class=\"ripples buttonRipples\"><span class=\"ripplesCircle\"></span></div>\n        </button> \n          <small>Already have an account? <a routerLink=\"/login\">Login here.</a> </small>\n      </form>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -6867,7 +6954,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "* {\n  box-sizing: border-box; }\n\nbody {\n  font-family: Helvetica;\n  background: #eee;\n  -webkit-font-smoothing: antialiased; }\n\nhgroup {\n  text-align: center;\n  margin-top: 4em; }\n\nh1, h3 {\n  font-weight: 300; }\n\nh1 {\n  color: #636363; }\n\nh3 {\n  color: #4a89dc; }\n\nform {\n  width: 380px;\n  margin: 4em auto;\n  padding: 3em 2em 2em 2em;\n  background: #fafafa;\n  border: 1px solid #ebebeb;\n  box-shadow: rgba(0, 0, 0, 0.14902) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09804) 0px 1px 2px 0px; }\n\n.group {\n  position: relative;\n  margin-bottom: 45px; }\n\ninput {\n  font-size: 18px;\n  padding: 10px 10px 10px 5px;\n  -webkit-appearance: none;\n  display: block;\n  background: #fafafa;\n  color: #636363;\n  width: 100%;\n  border: none;\n  border-radius: 0;\n  border-bottom: 1px solid #757575; }\n\ninput:focus {\n  outline: none; }\n\n/* Label */\nlabel {\n  color: #999;\n  font-size: 18px;\n  font-weight: normal;\n  position: absolute;\n  pointer-events: none;\n  left: 5px;\n  top: 10px;\n  transition: all 0.2s ease; }\n\n/* active */\ninput:focus ~ label, input.used ~ label {\n  top: -20px;\n  -webkit-transform: scale(0.75);\n          transform: scale(0.75);\n  left: -2px;\n  /* font-size: 14px; */\n  color: #4a89dc; }\n\n/* Underline */\n.bar {\n  position: relative;\n  display: block;\n  width: 100%; }\n\n.bar:before, .bar:after {\n  content: '';\n  height: 2px;\n  width: 0;\n  bottom: 1px;\n  position: absolute;\n  background: #4a89dc;\n  transition: all 0.2s ease; }\n\n.bar:before {\n  left: 50%; }\n\n.bar:after {\n  right: 50%; }\n\n/* active */\ninput:focus ~ .bar:before, input:focus ~ .bar:after {\n  width: 50%; }\n\n/* Highlight */\n.highlight {\n  position: absolute;\n  height: 60%;\n  width: 100px;\n  top: 25%;\n  left: 0;\n  pointer-events: none;\n  opacity: 0.5; }\n\n/* active */\ninput:focus ~ .highlight {\n  -webkit-animation: inputHighlighter 0.3s ease;\n          animation: inputHighlighter 0.3s ease; }\n\n/* Animations */\n@-webkit-keyframes inputHighlighter {\n  from {\n    background: #4a89dc; }\n  to {\n    width: 0;\n    background: transparent; } }\n@keyframes inputHighlighter {\n  from {\n    background: #4a89dc; }\n  to {\n    width: 0;\n    background: transparent; } }\n\n/* Button */\n.button {\n  position: relative;\n  display: inline-block;\n  padding: 12px 24px;\n  margin: .3em 0 1em 0;\n  width: 100%;\n  vertical-align: middle;\n  color: #fff;\n  font-size: 16px;\n  line-height: 20px;\n  -webkit-font-smoothing: antialiased;\n  text-align: center;\n  letter-spacing: 1px;\n  background: transparent;\n  border: 0;\n  border-bottom: 2px solid #3160B6;\n  cursor: pointer;\n  transition: all 0.15s ease; }\n\n.button:focus {\n  outline: 0; }\n\n/* Button modifiers */\n.buttonBlue {\n  background: #4a89dc;\n  text-shadow: 1px 1px 0 rgba(39, 110, 204, 0.5); }\n\n.buttonBlue:hover {\n  background: #357bd8; }\n\n/* Ripples container */\n.ripples {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n  background: transparent; }\n\n/* Ripples circle */\n.ripplesCircle {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  opacity: 0;\n  width: 0;\n  height: 0;\n  border-radius: 50%;\n  background: rgba(255, 255, 255, 0.25); }\n\n.ripples.is-active .ripplesCircle {\n  -webkit-animation: ripples .4s ease-in;\n          animation: ripples .4s ease-in; }\n\n/* Ripples animation */\n@-webkit-keyframes ripples {\n  0% {\n    opacity: 0; }\n  25% {\n    opacity: 1; }\n  100% {\n    width: 200%;\n    padding-bottom: 200%;\n    opacity: 0; } }\n@keyframes ripples {\n  0% {\n    opacity: 0; }\n  25% {\n    opacity: 1; }\n  100% {\n    width: 200%;\n    padding-bottom: 200%;\n    opacity: 0; } }\n\nfooter {\n  text-align: center; }\n\nfooter p {\n  color: #888;\n  font-size: 13px;\n  letter-spacing: .4px; }\n\nfooter a {\n  color: #4a89dc;\n  text-decoration: none;\n  transition: all .2s ease; }\n\nfooter a:hover {\n  color: #666;\n  text-decoration: underline; }\n\nfooter img {\n  width: 80px;\n  transition: all .2s ease; }\n\nfooter img:hover {\n  opacity: .83; }\n\nfooter img:focus, footer a:focus {\n  outline: none; }\n", ""]);
 
 // exports
 
@@ -6883,6 +6970,8 @@ module.exports = module.exports.toString();
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserSignupComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6893,10 +6982,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var UserSignupComponent = /** @class */ (function () {
-    function UserSignupComponent() {
+    function UserSignupComponent(authService, router) {
+        this.authService = authService;
+        this.router = router;
     }
     UserSignupComponent.prototype.ngOnInit = function () {
+    };
+    UserSignupComponent.prototype.signup = function () {
+        this.authService.signup(this.email, this.password);
+        this.router.navigate(['/login']);
     };
     UserSignupComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -6904,7 +7001,8 @@ var UserSignupComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/user-signup/user-signup.component.html"),
             styles: [__webpack_require__("../../../../../src/app/user-signup/user-signup.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]])
     ], UserSignupComponent);
     return UserSignupComponent;
 }());

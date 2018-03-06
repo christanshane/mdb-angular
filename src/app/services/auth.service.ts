@@ -23,7 +23,7 @@ export class AuthService {
 
    login(email:string, password:string){
      this.firebaseAuth.auth.signInWithEmailAndPassword(email, password).then(value =>{
-       console.log("Nice it worked!");
+       console.log("Nice it worked!", value);
       this.router.navigate(['/']);
      })
      .catch(err =>{
@@ -33,7 +33,7 @@ export class AuthService {
 
    logout(){
     this.firebaseAuth.auth.signOut().then(value=>{
-      console.log('You have logged out');
+      console.log('You have logged out', value);
       this.router.navigate(['/']); 
     });
    }

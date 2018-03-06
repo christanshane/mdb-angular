@@ -35,25 +35,25 @@
         </div>
     </div>
     <br>
-    <div class="row">
-        <div *ngFor="let product of products" class="col-lg-4">
-            <div class="card mb-r wow fadeIn">
-                <img class="img-fluid mt-4" src="{{product.img}}" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="font-bold">
-                        <strong>{{product.name}}</strong>
-                        <div *ngIf="product.tag=='Sale'">
-                            <span class="badge badge-success">{{product.tag}}</span>
-                        </div>
-                        <div *ngIf="product.tag=='Featured'">
-                            <span class="badge badge-danger">{{product.tag}}</span>
-                        </div>
-                    </h5>
-                    <hr>
-                    <h4>
-                        <strong>₱{{product.price}}</strong>
-                    </h4>
-                    <a [routerLink]="['/product', product.id]" class="btn btn-info btn-md">Details</a>
+    <div class="container-fluid content-row">
+        <div class="row">
+            <div *ngFor="let product of products" class="col-lg-4">
+                <div class="card mb-r wow fadeIn">
+                    <img class="img-fluid card-img-top mt-4" style="object-fit:cover;" src="{{product.img}}" alt="Card image cap">
+                    <div class="card-body">
+                            {{product.name.slice(0,20)}}...
+                        <hr>
+                        <h4>
+                            <strong>₱{{product.price}}</strong>
+                        </h4>
+                            <!--<div *ngIf="product.tag=='Sale'">
+                                <span class="badge badge-success">{{product.tag}}</span>
+                            </div>
+                            <div *ngIf="product.tag=='Featured'">
+                                <span class="badge badge-danger">{{product.tag}}</span>
+                            </div>-->
+                        <a [routerLink]="['/product', product.id]" class="btn btn-info btn-md">Details</a>
+                    </div>
                 </div>
             </div>
         </div>
